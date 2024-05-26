@@ -1,3 +1,27 @@
 .card{
-  background-color: blue;
+  border-radius: 1.125rem;
+  box-shadow: 0 10px 13px -4px rgba(35, 35, 95, 0.19);
+  background: #fff;
+
+  @media(max-width: 903px){
+    height: 228px;
+  }
+
+  .image{
+    border-radius: 1.125rem 1.125rem 0 0;
+    height: 162px;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .description{
+    font-size: 1.125rem;
+    color: var(--text);
+    padding: 0 .8rem;
+    margin: 0.8rem 0
+  }
 }

@@ -1,0 +1,30 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 1.125rem;
+  padding: 12px;
+  align-self: start;
+
+      a{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: .75rem;
+        padding: .75rem;
+        text-decoration: none;
+        margin-bottom: -5px;
+        color: var(--text);
+
+        &.active{
+          color: var(--text-active);
+          background: var(--bg-btn-active);
+        }
+
+
+
+
+
+
+  }
+}

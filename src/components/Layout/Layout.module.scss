@@ -1,4 +1,5 @@
 .layout{
-  display: flex;
-  background-color: red;
+  display: grid;
+  grid-template-columns: 264px 1fr;
+  gap: 1.5rem;
 }

@@ -1,5 +1,17 @@
+@import './styles/_fonts.scss';
+@import './styles/_colors.scss';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Nunito, sans-serif;
+  line-height: 1;
+  font-size: 1.125rem;
+  font-weight: 800;
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 24px;
 }
 
 

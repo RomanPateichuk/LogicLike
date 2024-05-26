@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {api} from '../../redux/api.ts'
-import {useNavigate} from "react-router-dom";
+import {NavLink} from 'react-router-dom'
+import styles from './Aside.module.scss'
 
 export const Aside: React.FC = () => {
-  const navigate = useNavigate()
+
   const {topics} = api.useGetCoursesQuery(undefined,
     {
       selectFromResult: ({data}) => {
@@ -26,27 +27,19 @@ export const Aside: React.FC = () => {
       },
     })
 
-  const [selectedItemId, setSelectedItemId] = useState(topics && topics.length > 0 ? topics[0].id : null)
+  return <nav className={styles.aside}>
 
-  const onClickHandler = (id: number, name: string) => {
-    setSelectedItemId(id)
-    if (name === 'Все темы') {
-      navigate(`/all`, {state: {name}})
-    } else {
-      navigate(`/${id}`, {state: {name}})
-    }
-  }
-
-  return <nav>
-    <ul>
       {
         topics && topics.map(item => (
-          <li
-            onClick={() => {onClickHandler(item.id, item.name)}}
-            style={{ fontWeight: selectedItemId === item.id ? 'bold' : 'normal' }}
-            key={item.id}>{item.name}</li>
+            <NavLink
+              to={item.name === 'Все темы' ? '/all' : `/${item.id}`}
+              state={{name: item.name}}
+              className={({isActive}) => isActive ? styles.active : ''}
+              key={item.id}
+            >
+              {item.name}
+            </NavLink>
         ))
       }
-    </ul>
   </nav>
 }

@@ -7,12 +7,15 @@ type CardPropType = {
   bg : string
 }
 
-export const Card: React.FC<CardPropType> = (props)=>{
+export const Card: React.FC<CardPropType> = React.memo((props)=>{
 
   const {name, image, bg} = props
 
-  return <div className={styles.card} style={{backgroundColor: bg}}>
-    <img src={image} alt={name}/>
-    <p>{name}</p>
+  return <div className={styles.card} >
+    <div className={styles.image} style={{backgroundColor: bg}}>
+      <img src={image} alt={name} />
+    </div>
+
+    <p className={styles.description}>{name}</p>
   </div>
-}
+})
