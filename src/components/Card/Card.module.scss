@@ -2,8 +2,13 @@
   border-radius: 1.125rem;
   box-shadow: 0 10px 13px -4px rgba(35, 35, 95, 0.19);
   background: #fff;
+  height: 228px;
 
-  @media(max-width: 903px){
+  @media(max-width: 1551px){
+    height: 210px;
+  }
+
+  @media(max-width: 903px) {
     height: 228px;
   }
 
